@@ -1,0 +1,1 @@
+<report><cubename>Warehouse</cubename><levels>cube.cube.aggregate.sum(Store Invoice)-Warehouse.Warehouse.Warehouse Name.Warehouse Name</levels><order_col></order_col><order_type></order_type><slice></slice></report>

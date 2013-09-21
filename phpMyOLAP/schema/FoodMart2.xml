@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<Schema name="FoodMart">
+<!--
+  == $Id: //open/mondrian-release/3.2/demo/FoodMart.xml#2 $
+  == This software is subject to the terms of the Eclipse Public License v1.0
+  == Agreement, available at the following URL:
+  == http://www.eclipse.org/legal/epl-v10.html.
+  == Copyright (C) 2000-2002 Kana Software, Inc.
+  == Copyright (C) 2002-2009 Julian Hyde and others
+  == All Rights Reserved.
+  == You must accept the terms of that agreement to use this software.
+  -->
+
+<!-- Shared dimensions -->
+
+<Dimension name="Warehouse">
+    <Hierarchy hasAll="true" name="Warehouse" primaryKey="warehouse_id" primaryKeyTable="warehouse">
+      <Table name="warehouse"/>
+      
+      <Level name="City" column="warehouse_city" uniqueMembers="false">
+      <Property name="Warehouse City" column="warehouse_city"/>
+      </Level>
+      
+      <Level name="Warehouse Name" column="warehouse_name" uniqueMembers="true">
+      <Property name="Warehouse Name" column="warehouse_name"/>
+      </Level>
+      
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Store">
+    <Hierarchy hasAll="true" name="Store" primaryKey="store_id" primaryKeyTable="store">
+      <Table name="store"/>
+      <Level name="Store Country" table="store" column="store_country" uniqueMembers="true">
+        <Property name="Store Country" column="store_country"/>
+      </Level>
+      
+      <Level name="Store State" column="store_state" uniqueMembers="true">
+        <Property name="Store State" column="store_state"/>
+      </Level>
+      <Level name="Store City" column="store_city" uniqueMembers="false">
+        <Property name="Store City" column="store_city"/>
+      </Level>
+      
+      <Level name="Store Name" column="store_name" uniqueMembers="true">
+        <Property name="Store Name" column="store_name"/>
+        <Property name="Store Type" column="store_type"/>
+        <Property name="Store Manager" column="store_manager"/>
+        <Property name="Store Sqft" column="store_sqft" type="Numeric"/>
+        <Property name="Grocery Sqft" column="grocery_sqft" type="Numeric"/>
+        <Property name="Frozen Sqft" column="frozen_sqft" type="Numeric"/>
+        <Property name="Meat Sqft" column="meat_sqft" type="Numeric"/>
+        <Property name="Has coffee bar" column="coffee_bar" type="Boolean"/>
+        <Property name="Street address" column="store_street_address" type="String"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Store Size in SQFT">
+    <Hierarchy hasAll="true" name="Store Size" primaryKey="store_id" primaryKeyTable="store">
+      <Table name="store"/>
+      <Level name="Store Sqft" column="store_sqft" type="Numeric" uniqueMembers="true">
+        <Property name="Store Sqft" column="store_sqft"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Store Type">
+    <Hierarchy hasAll="true" name="Store Type" primaryKey="store_id" primaryKeyTable="store">
+      <Table name="store"/>
+      <Level name="Store Type" column="store_type" uniqueMembers="true">
+      <Property name="Store Type" column="store_type"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Time" type="TimeDimension">
+    <Hierarchy hasAll="false" name="Quarterly" primaryKey="time_id" primaryKeyTable="time_by_day">
+      <Table name="time_by_day"/>
+      <Level name="Year" column="the_year" type="Numeric" uniqueMembers="true" levelType="TimeYears">
+      <Property name="year" column="the_year"/>
+      </Level>
+      
+      <Level name="Quarter" column="quarter" uniqueMembers="false" levelType="TimeQuarters">
+      <Property name="quarter" column="quarter"/>
+      </Level>
+      
+      <Level name="Month" column="month_of_year" uniqueMembers="false" type="Numeric" levelType="TimeMonths">
+      <Property name="month" column="month_of_year"/>
+      </Level>
+      
+      
+    </Hierarchy>
+    <Hierarchy hasAll="true" name="Weekly" primaryKey="time_id" primaryKeyTable="time_by_day">
+      <Table name="time_by_day"/>
+      
+      <!--unnecessary because redundant-->
+      <!--<Level name="Year" column="the_year" type="Numeric" uniqueMembers="true" levelType="TimeYears"><Property name="year" column="the_year"/></Level>-->
+            
+      <Level name="Week" column="week_of_year" type="Numeric" uniqueMembers="false" levelType="TimeWeeks">
+      <Property name="week" column="week_of_year"/>
+      </Level>
+      
+      <Level name="Day" column="day_of_month" uniqueMembers="false" type="Numeric" levelType="TimeDays">
+      <Property name="day" column="day_of_month"/>
+      </Level>
+      
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Product">
+    <Hierarchy hasAll="true" name="Product" primaryKey="product_id" primaryKeyTable="product">
+      <Join leftKey="product_class_id" rightKey="product_class_id">
+        <Table name="product"/>
+        <Table name="product_class"/>
+      </Join>
+      <Level name="Product Family" table="product_class" column="product_family" uniqueMembers="true">
+      <Property name="Product Family" column="product_family"/>
+      </Level>
+      <Level name="Product Department" table="product_class" column="product_department" uniqueMembers="false">
+      <Property name="Product Department" column="product_department"/>
+      </Level>
+      <Level name="Product Category" table="product_class" column="product_category" uniqueMembers="false">
+      <Property name="Product Category" column="product_category"/>
+      </Level>
+      <Level name="Product Subcategory" table="product_class" column="product_subcategory" uniqueMembers="false">
+      <Property name="Product Subcategory" column="product_subcategory"/>
+      </Level>
+      <Level name="Brand Name" table="product" column="brand_name" uniqueMembers="false">
+      <Property name="Brand Name" column="brand_name"/>
+      </Level>
+      <Level name="Product Name" table="product" column="product_name"  uniqueMembers="true">
+      <Property name="Product Name" column="product_name"/>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+
+<!-- Sales -->
+<Cube name="Sales" defaultMeasure="Unit Sales">
+  <Table name="sales_fact_1997"></Table>
+
+  <DimensionUsage name="Store" source="Store" foreignKey="store_id"/>
+  <DimensionUsage name="Store Size in SQFT" source="Store Size in SQFT" foreignKey="store_id"/>
+  <DimensionUsage name="Store Type" source="Store Type" foreignKey="store_id"/>
+  <DimensionUsage name="Time" source="Time" foreignKey="time_id"/>
+  <DimensionUsage name="Product" source="Product" foreignKey="product_id"/>
+  
+  <Measure name="Unit Sales" column="unit_sales" aggregator="sum" formatString="Standard"/>
+  <Measure name="Store Cost" column="store_cost" aggregator="sum" formatString="#,###.00"/>
+  <Measure name="Store Sales" column="store_sales" aggregator="sum" formatString="#,###.00"/>
+  <Measure name="Sales Count" column="product_id" aggregator="count" formatString="#,###"/>
+  <Measure name="Customer Count" column="customer_id" aggregator="distinct-count" formatString="#,###"/>
+  <Measure name="Promotion Sales" aggregator="sum" formatString="#,###.00"/>
+  <CalculatedMember name="Profit" dimension="Measures"><Formula expression='store_sales+10' alias='profit'/>
+    <CalculatedMemberProperty name="FORMAT_STRING" value="$#,##0.00"/>
+  </CalculatedMember>
+</Cube>
+
+
+<Cube name="Warehouse">
+  <Table name="inventory_fact_1997"/>
+
+  <DimensionUsage name="Store" source="Store" foreignKey="store_id"/>
+  <DimensionUsage name="Store Size in SQFT" source="Store Size in SQFT" foreignKey="store_id"/>
+  <DimensionUsage name="Store Type" source="Store Type" foreignKey="store_id"/>
+  <DimensionUsage name="Time" source="Time" foreignKey="time_id"/>
+  <DimensionUsage name="Product" source="Product" foreignKey="product_id"/>
+  <DimensionUsage name="Warehouse" source="Warehouse" foreignKey="warehouse_id"/>
+
+  <Measure name="Store Invoice" column="store_invoice" aggregator="sum"/>
+  <Measure name="Supply Time" column="supply_time" aggregator="sum"/>
+</Cube>
+
+</Schema>
