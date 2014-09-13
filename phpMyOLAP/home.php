@@ -1,11 +1,15 @@
 <?php
+
+
 include("config.php");
 include("functions.php");
 
+$redirectpage='';
+if ( $authentication ) $redirectpage = auth($_POST['username'], $_POST['password']);
 
-printHTMLHead($stylefile,$jsfile);
+printHTMLHead($stylefile,$jsfile, $redirectpage);
 
-
+print "<center><h2>phpMyOLAP Reports</h2></center>";
 print "<table align=center>";
   print "<tr>";
     print "<td align=center>";
@@ -20,7 +24,7 @@ print "</table>";
 print "<hr>";
 print "<center>";
 print "Official WebSite <a href='http://phpmyolap.altervista.org'><b>phpmyolap.altervista.org</b></a>";
-print "<p>E-mail <a href='mailto:phpmyolap@altervista.org'><b>phpmyolap@altervista.org</b></a>";
+print "<p>GitHub Repo <a href='https://github.com/apmuthu/phpMyOLAP'><b>github.com/apmuthu/phpMyOLAP</b></a>";
 
 print "</center>";
 ?>
