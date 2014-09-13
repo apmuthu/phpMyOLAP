@@ -2,7 +2,7 @@
 
 function exec_query($query)
 {
-//***************************************************CONNESSIONE DW
+//***************************************************Connection to DB
 global $db_host, $db_user, $db_password, $db_name;
 $db = mysql_connect($db_host, $db_user, $db_password);
 if ($db == FALSE) die ("Connection Error.<br>");
