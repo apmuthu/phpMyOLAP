@@ -11,7 +11,7 @@ $slice=$_GET["slice"];
 
 $nomereport=$_GET['nomereport'];
 $nomefile="../saved/$nomereport.xml";
-$filehandle=fopen($nomefile,'w') or die("Impossibile salvare il report");
+$filehandle=fopen($nomefile,'w') or die("Impossible to save report");
 
 $cubename_tag="<cubename>$cubename</cubename>";
 $levels_tag="<levels>$levels</levels>";
@@ -28,5 +28,5 @@ fwrite($filehandle,$slice_tag);
 fwrite($filehandle,"</report>");
 fclose($filehandle);
 
-print "Report salvato"; 
+print "Report saved"; 
 ?>
