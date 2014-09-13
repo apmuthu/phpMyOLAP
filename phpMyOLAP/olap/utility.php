@@ -127,7 +127,7 @@ if($dim1=="cube" and $hier1=="cube" and $lev1=="aggregate")
                 $nj=$nj+1;
                 }
                       
-                //************************aggiungi join
+                //************************ Add join
                 $join[$nj]=buildJoin($hier);
                 $nj=$nj+1;                
                 
@@ -167,7 +167,7 @@ list($dim_c,$hier_c,$lev_c,$prop_c,$cond1)=explode(".",$cond[$i]);
 
 $cond1=trasforma($cond1);
 
-//aggiungi fk_cube
+// Add fk_cube
 foreach($cube->DimensionUsage as $dimension_cube)
 {
   $dimensionname_cube=$dimension_cube['name'];
@@ -198,7 +198,7 @@ foreach($xml->Dimension as $dimensioncube)
                 $join[$nj]="right join $pk_hiertable on $cubetablename.$fk_cube=$pk_hiertable.$pk_hier ";
                 $nj=$nj+1;
                 }
-                //************************aggiungi join
+                //************************ Add join
                 $join[$nj]=buildJoin($hier);
                 $nj=$nj+1;                
                 //*********************************************

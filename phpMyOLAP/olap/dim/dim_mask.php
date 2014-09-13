@@ -6,8 +6,8 @@ print "<center>";
 print "<form id='form_report_dim' name='form_report_dim' action='../olap/report.php' method='post'>";
 
 print "<table style='margin-top:15px' border=0>";
-  print "<tr><td colspan=3 align=center><h4>Cambio dimensione</h4></td></tr>";
-  print "<tr><td colspan=3 align=center><b>Seleziona una dimensione</b></td></tr>";
+  print "<tr><td colspan=3 align=center><h4>Change Field</h4></td></tr>";
+  print "<tr><td colspan=3 align=center><b>Select a Field</b></td></tr>";
   
   print "<tr>";
     print "<td valign=center align=center>";
@@ -37,7 +37,7 @@ print "<table>";
       print "<a class='button' href='#' onclick='exec_change_dim(\"form_report_dim\")'>OK</a>";
     print "</td>";
     print "<td>";
-      print "<a class='button' href='#' onclick=\"document.getElementById('divChangeDim').style.visibility='hidden';\">Annulla</a>";
+      print "<a class='button' href='#' onclick=\"document.getElementById('divChangeDim').style.visibility='hidden';\">Cancel</a>";
     print "</td>";
   print "</tr>";
 print "</table>";

@@ -5,8 +5,8 @@ function exec_query($query)
 //***************************************************CONNESSIONE DW
 global $db_host, $db_user, $db_password, $db_name;
 $db = mysql_connect($db_host, $db_user, $db_password);
-if ($db == FALSE) die ("Errore nella connessione.<br>");
-mysql_select_db($db_name, $db) or die ("Errore nella selezione del database.<br>");
+if ($db == FALSE) die ("Connection Error.<br>");
+mysql_select_db($db_name, $db) or die ("Error connecting to database.<br>");
 
  
 $result=mysql_query($query, $db);
@@ -26,8 +26,8 @@ return $result;
 function printLegend($img_cube,$img_mea,$img_dim,$img_hier,$img_lev,$img_prop)
 {
 print "<fieldset>";
-print "<legend>Legenda</legend><img src='$img_cube'> Cubo <img src='$img_mea'> Misura <img src='$img_dim' width=24px height=24px>";
-print " Dimensione <img src='$img_hier'> Gerarchia <img src='$img_lev'> Livello <img src='$img_prop'> Propriet&agrave;";
+print "<legend>Legenda</legend><img src='$img_cube'> Cube <img src='$img_mea'> Measure <img src='$img_dim' width=24px height=24px>";
+print " Field <img src='$img_hier'> Hierarchy <img src='$img_lev'> Level <img src='$img_prop'> Properties";
 print " </fieldset>";
 
 }

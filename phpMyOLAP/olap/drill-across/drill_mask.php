@@ -15,7 +15,7 @@ print "</tr>";
 
 print "<tr>";
     print "<td>";
-      print "Seleziona il primo report<br>";
+      print "Select the first report<br>";
       print "<select name=rep1>";
       while($file=readdir($hnd))
         if ($file != "." && $file != "..")
@@ -25,7 +25,7 @@ print "<tr>";
 
     print "<td>";
       rewinddir();
-      print "Seleziona il secondo report<br>";
+      print "Select the second report<br>";
       print "<select name=rep2>";
       while($file=readdir($hnd))
         if ($file != "." && $file != "..")
@@ -39,7 +39,7 @@ print "<td>";
   print "<a style='width:120px' class='button' href='#' onclick='invia(\"drill_across\")';\">OK</a>";
 print "</td>";
 print "<td>";
-  print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divDrillAcross').style.visibility='hidden';\">Chiudi</a>";
+  print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divDrillAcross').style.visibility='hidden';\">Close</a>";
 print "</td>";
 
 print "</tr>";

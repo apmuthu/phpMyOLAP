@@ -6,8 +6,8 @@ print "<center>";
 print "<form id='form_report_hier' name='form_report_hier' action='../olap/report.php' method='post'>";
 
 print "<table style='margin-top:15px' border=0>";
-  print "<tr><td colspan=3 align=center><h4>Cambio gerarchia</h4></td></tr>";
-  print "<tr><td colspan=3 align=center><b>Seleziona una gerarchia</b></td></tr>";
+  print "<tr><td colspan=3 align=center><h4>Change Hierarchy</h4></td></tr>";
+  print "<tr><td colspan=3 align=center><b>Select a Hierarchy</b></td></tr>";
   
   print "<tr>";
     print "<td valign=center align=center>";
@@ -36,7 +36,7 @@ print "<table>";
       print "<a class='button' href='#' onclick='exec_change_hier(\"form_report_hier\")'>OK</a>";
     print "</td>";
     print "<td>";
-      print "<a class='button' href='#' onclick=\"document.getElementById('divChangeHier').style.visibility='hidden';\">Annulla</a>";
+      print "<a class='button' href='#' onclick=\"document.getElementById('divChangeHier').style.visibility='hidden';\">Cancel</a>";
     print "</td>";
   print "</tr>";
 print "</table>";

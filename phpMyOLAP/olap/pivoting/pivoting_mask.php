@@ -7,9 +7,9 @@ print "<form action='pivoting/pivoting.php' name='form_pivoting' method=post tar
 print "<input type=hidden name='cubename' value='$cubename_sel'>";
 print "<input type=hidden name='slice_pivoting' id='slice_pivoting' value=''>";
 
-print "Cubo: <b>$cubename_sel</b><br>";
+print "Cube: <b>$cubename_sel</b><br>";
 $num_lev_p=count($levels);
-print "Seleziona una misura:<br>";
+print "Select a Measure:<br>";
 
 print "<select name=measure_p>";
 for($i=0;$i<$num_lev_p;$i++)
@@ -26,7 +26,7 @@ print "<table>";
 print "<tr>";
 
 print "<td>";
-print "Sulle colonne<br>";
+print "On columns<br>";
 print "<select size=5  id='cols_pivoting' name='cols_pivoting' style='width:200px'>";
 for($i=0;$i<$num_lev_p;$i++)
 {
@@ -47,7 +47,7 @@ print "</td>";
 
 
 print "<td>";
-print "Sulle righe<br>";
+print "On rows<br>";
 print "<select size=5  id='rows_pivoting' name='rows_pivoting' style='width:200px'>";
 print "</select>";
 print "<td>";
@@ -64,7 +64,7 @@ print "<td>";
 print "<a style='width:120px' class='button' href='#' onclick=\"exec_pivoting()\">OK</a>";
 print "</td>";
 print "<td>";
-print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divPivoting').style.visibility='hidden';\">Chiudi</a>";
+print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divPivoting').style.visibility='hidden';\">Close</a>";
 print "</td>";
 print "<tr>";
 print "</table>";

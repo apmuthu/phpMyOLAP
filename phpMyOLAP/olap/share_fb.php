@@ -38,7 +38,7 @@ print "<img src='$img_linkedin' width=40px height=40px alt='condividi su linkedi
 print "</a>";
 
 
-print "<p><a style='width:120px' class='button' href='#' onclick=\"document.getElementById('share_fb').style.visibility='hidden';\">Chiudi</a>";
+print "<p><a style='width:120px' class='button' href='#' onclick=\"document.getElementById('share_fb').style.visibility='hidden';\">Close</a>";
 print "</center>";
 
 print "</div>";

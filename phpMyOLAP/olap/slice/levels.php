@@ -7,7 +7,7 @@ include("../../config.php");
 
 $xml=simplexml_load_file($xmlfile);
 
-print "<div style='margin-top:10px;'><b>Livelli</b> della gerarchia <i>$hiername_sel</i></div>";
+print "<div style='margin-top:10px;'>Hierarchy <b>Levels</b> in <i>$hiername_sel</i></div>";
 
 foreach($xml->Dimension as $dimension)
 {

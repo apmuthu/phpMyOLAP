@@ -33,10 +33,10 @@ print "<table cellspacing=5 cellpadding=5 width=100% border=0>";
         print "<tr id='rep_header'>";
         print "</tr>";
       print "</table>";
-      //print "<p><a style='width:120px' class='button' href='#' onclick='invia(\"form_report\")'>Crea report</a>";
-      print "<p><a style='width:120px' class='button' href='#' onClick='check_cube2()'>Crea report</a>";
+      //print "<p><a style='width:120px' class='button' href='#' onclick='invia(\"form_report\")'>Create Report</a>";
+      print "<p><a style='width:120px' class='button' href='#' onClick='check_cube2()'>Create Report</a>";
       print "<br>";
-      //**********************************************dati selezionati
+      //**********************************************Selected Data
       print "<select id='level_selected' size=5 name='level_selected[]' multiple style='visibility:hidden'>";
       include_once("checkback.php");
       print "</select>";

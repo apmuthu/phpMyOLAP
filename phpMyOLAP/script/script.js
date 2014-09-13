@@ -23,7 +23,7 @@ for(i=0;i<n;i++)
 if (elSel.options[i].selected==true)
   found=true;
 }
-if(found==false) {alert("Selezionare un livello sulle colonne");return;}
+if(found==false) {alert("Select a level in the columns");return;}
 
 
 found=false;
@@ -34,7 +34,7 @@ for(i=0;i<n;i++)
 if (elSel.options[i].selected==true)
   found=true;
 }
-if(found==false) {alert("Selezionare un livello sulle righe");return;}
+if(found==false) {alert("Select a level in the rows");return;}
 
 
 
@@ -57,7 +57,7 @@ function toCols()
 
 rows_pivoting=document.getElementById('rows_pivoting');
 d=rows_pivoting.options.selectedIndex;
-if (d==-1) {alert("Selezionare un valore");return;}
+if (d==-1) {alert("Select a value");return;}
 
 
 var elOptNew = document.createElement('option');
@@ -83,7 +83,7 @@ function toRows()
 
 cols_pivoting=document.getElementById('cols_pivoting');
 d=cols_pivoting.options.selectedIndex;
-if (d==-1) {alert("Selezionare un valore");return;}
+if (d==-1) {alert("Select a value");return;}
 
 
 var elOptNew = document.createElement('option');
@@ -636,7 +636,7 @@ var cell_del = document.getElementById(attr);
 row.removeChild(cell_del);
 
 
-//rimuovi dai livelli selezionati
+// Remove from selected levels
 var elSel = document.getElementById('level_selected');
 var items2 = elSel.getElementsByTagName("option");
 var n2=items2.length;
@@ -687,7 +687,7 @@ cell.appendChild(rif);
 row.appendChild(cell);
 
 
-//aggiungi ai livelli selezionati
+//add to selected levels
 var elOptNew = document.createElement('option');
 var elSel = document.getElementById('level_selected');
 try {

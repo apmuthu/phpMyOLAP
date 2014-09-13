@@ -60,7 +60,7 @@ print "<table align=center>";
       print "<input type=hidden name='operazione' value='back'>";
       print "<input type=hidden name='cubename' value='$cubename_sel'>";
       print "<input type=hidden name='levels' value='" . serialize($levels) . "'>";
-      print "<a style='width:120px' class='button' href='#' onclick='invia(\"form_report\")'>Modifica report</a>";
+      print "<a style='width:120px' class='button' href='#' onclick='invia(\"form_report\")'>Modify Report</a>";
       print "</form>";
     print "</td>";
     print "<td valign=top>";

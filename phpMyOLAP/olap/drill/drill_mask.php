@@ -7,7 +7,7 @@ print "<form id='form_report_drill' name='form_report_drill' action='../olap/rep
 
 print "<table style='margin-top:15px' border=0>";
   print "<tr><td colspan=3 align=center><h4>Roll-up/Drill-down</h4></td></tr>";
-  print "<tr><td colspan=3 align=center><b>Seleziona un livello</b></td></tr>";
+  print "<tr><td colspan=3 align=center><b>Select a Level</b></td></tr>";
   print "<tr>";
     print "<td valign=center align=center>";
       include "levels.php";
@@ -35,7 +35,7 @@ print "<table>";
       print "<a class='button' href='#' onclick='exec_drill(\"form_report_drill\")'>OK</a>";
     print "</td>";
     print "<td>";
-      print "<a class='button' href='#' onclick=\"document.getElementById('divDrill').style.visibility='hidden';\">Annulla</a>";
+      print "<a class='button' href='#' onclick=\"document.getElementById('divDrill').style.visibility='hidden';\">Cancel</a>";
     print "</td>";
   print "</tr>";
 print "</table>";

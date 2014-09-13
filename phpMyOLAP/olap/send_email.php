@@ -12,13 +12,13 @@ $slice=$_GET["slice"];
 //$shareurl="$urlsito/olap/report.php?parametri=$cubename*$levels*$colonna*$ordinamento*$slice";
 
 print "<div style='margin-top:15px;margin-left:15px'>";
-print "<b>Invia report link via email</b><br>";
+print "<b>Send report link via email</b><br>";
 print "<form action='send_email2.php' name=form_send_email method=post>";
 print "Email<br>";
 print "<input type=text name='email' id='email' size=50><br>";
-print "Oggetto<br>";
+print "Subject<br>";
 print "<input type=text name='oggetto' id='oggetto' size=50><br>";
-print "Testo<br>";
+print "Message Text<br>";
 print "<textarea name='testo' id='testo' cols=50></textarea>";
 
 //print "<input type=hidden id='hidden_shareurl' value='$shareurl'>";
@@ -30,7 +30,7 @@ print "<input type=hidden id='hidden_slice' value='$slice'>";
 
 print "<p><table align=center>";
 print "<tr align=center><td><a style='width:80px' class='button' href='#' onclick='send_email2()'>OK</a></td>";
-print "<td><a style='width:80px' class='button' href='#' onclick=\"document.getElementById('DIVsend_email').style.visibility='hidden';\">Annulla</a></td></tr>";
+print "<td><a style='width:80px' class='button' href='#' onclick=\"document.getElementById('DIVsend_email').style.visibility='hidden';\">Cancel</a></td></tr>";
 print "</table>";
 
 print "</form>";

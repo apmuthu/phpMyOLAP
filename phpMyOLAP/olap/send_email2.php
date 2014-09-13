@@ -26,10 +26,10 @@ $a=mail($email,$oggetto,$messaggio,$mittente);
 print "<div style='margin-top:20px;margin-left:20px'>";
 print "<center>";
 if($a==true)
-print "Email inviata correttamente";
+print "Email sent successfully";
 else
-print "Email non inviata";
-print "<br><br><br><a style='width:80px' class='button' href='#' onclick=\"document.getElementById('DIVsend_email').style.visibility='hidden';\">Chiudi</a>";
+print "Email not sent";
+print "<br><br><br><a style='width:80px' class='button' href='#' onclick=\"document.getElementById('DIVsend_email').style.visibility='hidden';\">Close</a>";
 print "</center>";
 print "</div>";
 
