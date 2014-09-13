@@ -1,4 +1,6 @@
 <?php
+$phpmyolap_version = '1.3.3';
+
 $authentication = false;
 $auth_user = 'admin';
 $auth_pass = 'password';

@@ -23,8 +23,9 @@ print "</table>";
 
 print "<hr>";
 print "<center>";
-print "Official WebSite <a href='http://phpmyolap.altervista.org'><b>phpmyolap.altervista.org</b></a>";
-print "<p>GitHub Repo <a href='https://github.com/apmuthu/phpMyOLAP'><b>github.com/apmuthu/phpMyOLAP</b></a>";
+print    "<a href='http://phpmyolap.altervista.org'><b>Official Website</b></a>";
+print " &nbsp; | &nbsp; phpMyOLAP v<b>$phpmyolap_version</b>";
+print " &nbsp; | &nbsp; <a href='https://github.com/apmuthu/phpMyOLAP'><b>GitHub Repo</b></a>";
 
 print "</center>";
 ?>
