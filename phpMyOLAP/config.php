@@ -1,7 +1,7 @@
 <?php
 
 $db_host = "localhost";
-$db_user = "";
+$db_user = "root";
 $db_password = "";
 $db_name = "FoodMart";
 $urlsito="http://localhost/phpMyOLAP";
