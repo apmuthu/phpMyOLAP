@@ -986,16 +986,11 @@ function Output($name='', $dest='')
 	if($this->state<3)
 		$this->Close();
 	$dest = strtoupper($dest);
-	if($dest=='')
-	{
-		if($name=='')
-		{
-			$name = 'doc.pdf';
-			$dest = 'I';
-		}
-		else
-			$dest = 'F';
-	}
+
+	if($dest=='') $dest = 'I';
+
+	if($name=='') $name = 'doc.pdf';
+
 	switch($dest)
 	{
 		case 'I':
