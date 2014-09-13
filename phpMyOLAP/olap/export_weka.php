@@ -22,7 +22,7 @@ $ncols=mysql_num_fields($result);
 print "@RELATION report\n";    
  
 
-//***************************INTESTAZIONE
+//***************************Heading
   for($i=0;$i<$ncols;$i++)
   {
     $colname=mysql_fetch_field($result);
@@ -62,8 +62,9 @@ while ($row = mysql_fetch_array($result))
 $contenuto=ob_get_contents();
 ob_end_clean();
 
+$arff_filename = "olap_" . date("Ymd_His") . ".arff";
 header("Content-Type: application/text");
-header("Content-Disposition: attachment; filename=temp.arff");
+header("Content-Disposition: attachment; filename=$arff_filename");
 print $contenuto;
 
 ?>

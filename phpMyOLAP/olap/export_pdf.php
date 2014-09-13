@@ -28,7 +28,7 @@ $h=10;
 $off_h=5;
 $off_w=40;
 
-//***************************INTESTAZIONE
+//***************************Heading
   for($i=0;$i<$ncols;$i++)
   {
     $colname=mysql_fetch_field($result);
@@ -67,7 +67,8 @@ while ($row = mysql_fetch_array($result))
     }
 }
 
+$pdf_filename = "olap_" . date("Ymd_His") . ".pdf";
 
-$p->output();
+$p->output($pdf_filename);
 
 ?>

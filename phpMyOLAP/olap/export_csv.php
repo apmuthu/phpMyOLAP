@@ -34,8 +34,9 @@ while ($row = mysql_fetch_array($result))
 $contenuto=ob_get_contents();
 ob_end_clean();
 
+$csv_filename = "olap_" . date("Ymd_His") . ".csv";
 header("Content-Type: application/text");
-header("Content-Disposition: attachment; filename=temp.csv");
+header("Content-Disposition: attachment; filename=$csv_filename");
 print $contenuto;
 
 
