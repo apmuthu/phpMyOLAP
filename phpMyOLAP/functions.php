@@ -32,13 +32,17 @@ print " </fieldset>";
 
 }
 
-function printHTMLHead($stylefile,$jsfile)
-{
-print "<head>";
-print "<link rel='stylesheet' type='text/css' href='$stylefile' />";
-print "<script type='text/javascript' src='$jsfile' language='javascript'></script>";
-print "<title>phpMyOLAP: OLAP tool for MySQL databases</title>";
-print "</head>";
+function printHTMLHead($stylefile,$jsfile,$redirectpage='') {
+	print "<head>";
+	if (strlen($redirectpage) != 0) {
+		print "\n<meta http-equiv='refresh' content='0;URL=$redirectpage'/>\n";
+		print "</head>";
+		exit;
+	}
+	print "<link rel='stylesheet' type='text/css' href='$stylefile' />";
+	print "<script type='text/javascript' src='$jsfile' language='javascript'></script>";
+	print "<title>phpMyOLAP: OLAP tool for MySQL databases</title>";
+	print "</head>";
 }
 
 ?>
