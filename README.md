@@ -9,3 +9,4 @@ Work done here
 * Moved to this GitHub Repo - [github.com/apmuthu/phpMyOLAP](https://github.com/apmuthu/phpMyOLAP)
 * English Translation
 * Rudimentary PHP Session based Authentication - Default hardcoded Access: admin / password
+* Export File names now prefixed with <b>olap_</b> and suffixed with timestamp
