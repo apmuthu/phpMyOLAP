@@ -38,7 +38,7 @@ document.getElementById("divReport").innerHTML=testo;
 function delSD()
 {
 var temp=document.getElementById("sd").options.selectedIndex;
-if (temp==-1) {alert("Selezionare un valore");return;}
+if (temp==-1) {alert("Select a value");return;}
 document.getElementById("sd").remove(temp);
 
 }

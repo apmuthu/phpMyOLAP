@@ -8,7 +8,7 @@ print "<center>";
 print "<table border=0  width=100%>";
   print "<tr>";
     print "<td width=25%>";
-      print "<div style='margin-left:20px;margin-top:10px;'><b>Field</b> in Cube <i>$cubename_sel</i></div>";
+      print "<div style='margin-left:20px;margin-top:10px;'><b>Dimension</b> in Cube <i>$cubename_sel</i></div>";
       include("slice/cubes.php");
     print "</td>";
     print "<td width=25%>";

@@ -37,7 +37,7 @@ $xml=simplexml_load_file($xmlfile);
 $cubename1=(string) $cubename1;
 $cubename2=(string) $cubename2;
 
-if($cubename1==$cubename2) die("Drill across non valido: selezionare due cubi differenti.");
+if($cubename1==$cubename2) die("Invalid Drill across: Select two different cubes.");
 
 //*******************************************************************common dimensions
 foreach($xml->Cube as $cubeA)
@@ -113,7 +113,7 @@ $query2=SQLgenerator2($cubename2,$levels_ser2,$slice2,$colonna2,$ordinamento2);
 //print "Q2 $query2<br>";
 
 
-//******************************************************ESTRAZIONE 1
+//******************************************************EXTRACTION 1
       $found_group=strrpos($query1,"group");
       $found_where=strrpos($query1,"where");
       $found_order=strrpos($query1,"order");
@@ -124,7 +124,7 @@ $query2=SQLgenerator2($cubename2,$levels_ser2,$slice2,$colonna2,$ordinamento2);
       $group1=buildGroup($found_group,$found_order,$query1);
       $order1=buildOrder($found_order,$query1);
 
-//******************************************************ESTRAZIONE 2
+//******************************************************EXTRACTION 2
       $found_group=strrpos($query2,"group");
       $found_where=strrpos($query2,"where");
       $found_order=strrpos($query2,"order");

@@ -6,8 +6,8 @@ print "<center>";
 print "<form id='form_report_dim' name='form_report_dim' action='../olap/report.php' method='post'>";
 
 print "<table style='margin-top:15px' border=0>";
-  print "<tr><td colspan=3 align=center><h4>Change Field</h4></td></tr>";
-  print "<tr><td colspan=3 align=center><b>Select a Field</b></td></tr>";
+  print "<tr><td colspan=3 align=center><h4>Change Dimension</h4></td></tr>";
+  print "<tr><td colspan=3 align=center><b>Select a Dimension</b></td></tr>";
   
   print "<tr>";
     print "<td valign=center align=center>";

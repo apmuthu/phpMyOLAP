@@ -8,7 +8,7 @@ include("../../config.php");
 
 $xml=simplexml_load_file($xmlfile);
 
-print "<div style='margin-top:10px;'><b>Propriet&agrave;</b> del livello <i>$hiername_sel</i></div>";
+print "<div style='margin-top:10px;'><b>Properties</b> of Level <i>$hiername_sel</i></div>";
 
 foreach($xml->Dimension as $dimension)
 {

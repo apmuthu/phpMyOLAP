@@ -6,7 +6,7 @@ include("../../config.php");
 
 $xml=simplexml_load_file($xmlfile);
 
-print "<div style='margin-top:10px;'><b>Hierarchy</b> in the Field <i>$dimensionname_sel</i></div>";
+print "<div style='margin-top:10px;'><b>Hierarchy</b> in the Dimension <i>$dimensionname_sel</i></div>";
 
 
 foreach($xml->Dimension as $dimension)

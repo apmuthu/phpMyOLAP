@@ -27,7 +27,7 @@ function printLegend($img_cube,$img_mea,$img_dim,$img_hier,$img_lev,$img_prop)
 {
 print "<fieldset>";
 print "<legend>Legenda</legend><img src='$img_cube'> Cube <img src='$img_mea'> Measure <img src='$img_dim' width=24px height=24px>";
-print " Field <img src='$img_hier'> Hierarchy <img src='$img_lev'> Level <img src='$img_prop'> Properties";
+print " Dimension <img src='$img_hier'> Hierarchy <img src='$img_lev'> Level <img src='$img_prop'> Properties";
 print " </fieldset>";
 
 }
