@@ -3,7 +3,8 @@ phpMyOLAP
 * [OLAP](http://olap.com/olap-definition/) - OnLine Analytical Processing | [Wikipedia](https://en.wikipedia.org/wiki/Online_analytical_processing)
 * Original Italian WebSite <a href='http://phpmyolap.altervista.org'><b>phpmyolap.altervista.org</b></a>
 * Sourceforge Site <a href='http://sourceforge.net/projects/phpmyolap/'><b>sf.net/p/phpmyolap</b></a>
-* Sample MySQL Database [Foodmart](https://sites.google.com/a/dlpage.phi-integration.com/pentaho/mondrian/mysql-foodmart-database) (8 MB)
+* GitHub Site: <a href='https://github.com/fditria/phpmyolap'><b>github.com/fditria/phpmyolap</b></a>
+* Sample MySQL Database - [Foodmart](https://sites.google.com/a/dlpage.phi-integration.com/pentaho/mondrian/mysql-foodmart-database) (8 MB)
 
 What is phpMyOLAP?
 ==================
