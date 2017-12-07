@@ -19,6 +19,8 @@ while($file=readdir($hnd))
   }
 }
 
+footer();
+
 
 function print_form($xmlfile)
 {

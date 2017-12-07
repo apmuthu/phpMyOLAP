@@ -46,5 +46,6 @@ print "</table>";
 
 print "</form>";
 print "</center>";
-  
+
+footer();
 ?>

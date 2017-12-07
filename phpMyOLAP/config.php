@@ -18,7 +18,8 @@ $extra = 'index.php';
 
 $script_path = dirname($_SERVER['SCRIPT_NAME']). '/';
 $script_name = $script_path . basename($_SERVER['SCRIPT_FILENAME']);
-$script_pfx = '/' . basename($urlsito) . '/';
+$script_pfx = parse_url($urlsito);
+$script_pfx = $script_pfx['path'] . '/';
 
 if ($authentication) {
 	session_start();
@@ -28,6 +29,8 @@ if ($authentication) {
 			exit; 
 		}
 	}
+	if (is_logged_in() && isset($_GET['Logout']))
+		logout();
 } else {
 	if ($script_name == $script_pfx.'index.php') {
 		$extra = 'home.php';
@@ -42,6 +45,13 @@ function is_logged_in() {
 	return (isset($_SESSION['logged_in']) && $_SESSION['logged_in']);
 }
 
+function logout() {
+	global $urlsito;
+	if (isset($_SESSION['logged_in'])) unset($_SESSION['logged_in']);
+	header("Location: $urlsito/index.php");
+	exit; 
+}
+
 function auth($user, $pass) {
 	global $auth_user, $auth_pass;
 	$redirectpage='';
@@ -54,5 +64,16 @@ function auth($user, $pass) {
 		}
 	}
 	return $redirectpage;
+}
+
+function footer() {
+	global $phpmyolap_version, $authentication;
+	print "<hr>";
+	print "<center>";
+	print    "<a href='http://phpmyolap.altervista.org'><b>Official Website</b></a>";
+	print " &nbsp; | &nbsp; phpMyOLAP v<b>$phpmyolap_version</b>";
+	print " &nbsp; | &nbsp; <a href='https://github.com/apmuthu/phpMyOLAP'><b>GitHub Repo</b></a>";
+	if ($authentication && is_logged_in()) echo '&nbsp; | &nbsp; <a href="?Logout=1"><button>Logout</button></a>';
+	print "</center>";
 }
 ?>

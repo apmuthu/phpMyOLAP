@@ -21,11 +21,5 @@ print "<table align=center>";
   print "</tr>";
 print "</table>";
 
-print "<hr>";
-print "<center>";
-print    "<a href='http://phpmyolap.altervista.org'><b>Official Website</b></a>";
-print " &nbsp; | &nbsp; phpMyOLAP v<b>$phpmyolap_version</b>";
-print " &nbsp; | &nbsp; <a href='https://github.com/apmuthu/phpMyOLAP'><b>GitHub Repo</b></a>";
-
-print "</center>";
+footer();
 ?>
