@@ -26,9 +26,9 @@
       </Level>
       
     </Hierarchy>
-  </Dimension>
+</Dimension>
 
-  <Dimension name="Store">
+<Dimension name="Store">
     <Hierarchy hasAll="true" name="Store" primaryKey="store_id" primaryKeyTable="store">
       <Table name="store"/>
       <Level name="Store Country" table="store" column="store_country" uniqueMembers="true">
@@ -54,27 +54,27 @@
         <Property name="Street address" column="store_street_address" type="String"/>
       </Level>
     </Hierarchy>
-  </Dimension>
+</Dimension>
 
-  <Dimension name="Store Size in SQFT">
+<Dimension name="Store Size in SQFT">
     <Hierarchy hasAll="true" name="Store Size" primaryKey="store_id" primaryKeyTable="store">
       <Table name="store"/>
       <Level name="Store Sqft" column="store_sqft" type="Numeric" uniqueMembers="true">
         <Property name="Store Sqft" column="store_sqft"/>
       </Level>
     </Hierarchy>
-  </Dimension>
+</Dimension>
 
-  <Dimension name="Store Type">
+<Dimension name="Store Type">
     <Hierarchy hasAll="true" name="Store Type" primaryKey="store_id" primaryKeyTable="store">
       <Table name="store"/>
       <Level name="Store Type" column="store_type" uniqueMembers="true">
       <Property name="Store Type" column="store_type"/>
       </Level>
     </Hierarchy>
-  </Dimension>
+</Dimension>
 
-  <Dimension name="Time" type="TimeDimension">
+<Dimension name="Time" type="TimeDimension">
     <Hierarchy hasAll="false" name="Quarterly" primaryKey="time_id" primaryKeyTable="time_by_day">
       <Table name="time_by_day"/>
       <Level name="Year" column="the_year" type="Numeric" uniqueMembers="true" levelType="TimeYears">
@@ -106,9 +106,9 @@
       </Level>
       
     </Hierarchy>
-  </Dimension>
+</Dimension>
 
-  <Dimension name="Product">
+<Dimension name="Product">
     <Hierarchy hasAll="true" name="Product" primaryKey="product_id" primaryKeyTable="product">
       <Join leftKey="product_class_id" rightKey="product_class_id">
         <Table name="product"/>
@@ -133,7 +133,7 @@
       <Property name="Product Name" column="product_name"/>
       </Level>
     </Hierarchy>
-  </Dimension>
+</Dimension>
 
 <!-- Sales -->
 <Cube name="Sales" defaultMeasure="Unit Sales">

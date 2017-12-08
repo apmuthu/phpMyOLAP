@@ -55,4 +55,6 @@ print "</div>";
 
 create_log($query);
 
+footer();
+
 ?>

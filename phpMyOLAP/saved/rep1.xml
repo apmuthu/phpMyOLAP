@@ -1,1 +1,7 @@
-<report><cubename>Sales</cubename><levels>cube.cube.aggregate.sum(Unit Sales)-Store.Store.Store Country.Store Country</levels><order_col></order_col><order_type></order_type><slice></slice></report>
+<report>
+	<cubename>Sales</cubename>
+	<levels>cube.cube.aggregate.sum(Unit Sales)-Store.Store.Store Country.Store Country</levels>
+	<order_col></order_col>
+	<order_type></order_type>
+	<slice></slice>
+</report>

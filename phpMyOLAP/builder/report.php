@@ -8,7 +8,7 @@ $operazione=$_POST['operazione'];
 
 
 printHTMLHead($stylefile,$jsfile);
-print "<table width=100%><tr><td valign=top><a href='../home.php'><img src='$img_home' width=35px height=35px></a></td>";
+print "<table width=100%><tr><td valign=top><a href='../home.php' title='Home'><img src='$img_home' width=35px height=35px></a></td>";
 print "<td>";
 printLegend($img_cube,$img_mea,$img_dim,$img_hier,$img_lev,$img_prop);
 print "</td></tr></table>";
