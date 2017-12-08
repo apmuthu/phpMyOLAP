@@ -39,7 +39,7 @@ list($dim1,$hier1,$lev1,$prop1)=explode(".",$levels[$i]);
 
 if($dim1=="cube" and $hier1=="cube" and $lev1!="aggregate")
 {
-  //**************misure del cubo
+  //**************cube measures
   foreach($cube->Measure as $measure)
   {
   $measurename=$measure["name"];
@@ -48,7 +48,7 @@ if($dim1=="cube" and $hier1=="cube" and $lev1!="aggregate")
     $target_list.="$measurecol,";
   }
   
-  //misure calcolate
+  //calculated measures
   foreach($cube->CalculatedMember as $calc_measure)
   {
   $calc_measurename=$calc_measure["name"];
@@ -83,7 +83,7 @@ if($dim1=="cube" and $hier1=="cube" and $lev1=="aggregate")
   }
   
   
-  //misure calcolate
+  //calculated measure
   foreach($cube->CalculatedMember as $calc_measure)
   {
   $calc_measurename=$calc_measure["name"];
@@ -229,7 +229,7 @@ $where_final = $where_final . " $where[$i] AND ";
 }
 
 
-//***********************elimina join ridondanti
+//***********************eliminate redundant joins
 
 for($i=0;$i<$nj;$i++) 
 {
@@ -245,13 +245,13 @@ for($i=0;$i<$nj;$i++)
  $join_final.=" $join[$i]";
 }
 
-//***********************costruisci target list
+//***********************build target list
 $n=strlen($target_list);
 $target_list=substr($target_list,0,$n-1);
 //print $target_list; 
 
 
-//******************************costruisci group by
+//******************************build group by
 for($i=0;$i<$nl;$i++) 
 {
   for($j=0;$j<$nl;$j++) 
@@ -271,7 +271,7 @@ $n=strlen($group_final);
 $group_final=substr($group_final,0,$n-1);
 
 
-//***********************costruisci query finale
+//***********************build final query
 $n=strlen($where_final);
 $where_final=substr($where_final,0,$n-5);
 $n=strlen($where_final);
@@ -291,7 +291,7 @@ else
   $query="select distinct $target_list $mea from $cubetablename $join_final group by $group_final";
 }
 
-//***************************ORDINAMENTO
+//***************************Sort Order
 list($tab1,$col1)=explode(".",$colonna);
 $a=strrpos($join_final,$tab1);
 if($tab1!="" && $a!=false && $colonna!="" && $ordinamento!="")

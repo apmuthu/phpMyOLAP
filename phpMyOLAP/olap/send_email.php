@@ -29,8 +29,8 @@ print "<input type=hidden id='hidden_colonna' value='$colonna'>";
 print "<input type=hidden id='hidden_slice' value='$slice'>";
 
 print "<p><table align=center>";
-print "<tr align=center><td><a style='width:80px' class='button' href='#' onclick='send_email2()'>OK</a></td>";
-print "<td><a style='width:80px' class='button' href='#' onclick=\"document.getElementById('DIVsend_email').style.visibility='hidden';\">Cancel</a></td></tr>";
+print "<tr align=center><td><a style='width:80px' class='button' href='#' onclick='send_email2()'>$message[ok]</a></td>";
+print "<td><a style='width:80px' class='button' href='#' onclick=\"document.getElementById('DIVsend_email').style.visibility='hidden';\">$message[cancel]</a></td></tr>";
 print "</table>";
 
 print "</form>";

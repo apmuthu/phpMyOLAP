@@ -5,9 +5,9 @@ include("../functions.php");
 
 printHTMLHead($stylefile,$jsfile);
 
-print "<a href='../home.php' title='Home'><img src='$img_home' width=35px height=35px></a>";
+print "<a href='../home.php' title='$message[home]'><img src='$img_home' width=35px height=35px></a>";
 print "<div style='margin-left:25px'>";
-print "<h2>Saved Reports</h2>";
+print "<h2>$message[report]</h2>";
 print "</div>";
 
 $hnd=opendir("../saved/");

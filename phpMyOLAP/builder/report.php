@@ -8,7 +8,7 @@ $operazione=$_POST['operazione'];
 
 
 printHTMLHead($stylefile,$jsfile);
-print "<table width=100%><tr><td valign=top><a href='../home.php' title='Home'><img src='$img_home' width=35px height=35px></a></td>";
+print "<table width=100%><tr><td valign=top><a href='../home.php' title='$message[home]'><img src='$img_home' width=35px height=35px></a></td>";
 print "<td>";
 printLegend($img_cube,$img_mea,$img_dim,$img_hier,$img_lev,$img_prop);
 print "</td></tr></table>";
@@ -30,11 +30,11 @@ print "<table cellspacing=5 cellpadding=5 width=100% border=0>";
     print "<td valign=top align=center>";
       //*************************************************REPORT **************************************************
       print "<table border=1 id='report'>";
-        print "<tr id='rep_header'>";
-        print "</tr>";
+      print "<tr id='rep_header'>";
+      print "</tr>";
       print "</table>";
       //print "<p><a style='width:120px' class='button' href='#' onclick='invia(\"form_report\")'>Create Report</a>";
-      print "<p><a style='width:120px' class='button' href='#' onClick='check_cube2()'>Create Report</a>";
+      print "<p><a style='width:120px' class='button' href='#' onClick='check_cube2()'>$message[create]</a>";
       print "<br>";
       //**********************************************Selected Data
       print "<select id='level_selected' size=5 name='level_selected[]' multiple style='visibility:hidden'>";
