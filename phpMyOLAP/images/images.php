@@ -30,5 +30,9 @@ $img_email="$urlsito/images/email.png";
 $img_linkedin="$urlsito/images/linkedin.png";
 $img_google="$urlsito/images/google.png";
 $img_weka="$urlsito/images/weka.jpg";
+$img_bg="$urlsito/images/bg.png";
+$img_filter="$urlsito/images/filter.png";
+$img_rotate="$urlsito/images/rotate.png";
+$img_search="$urlsito/images/search.png";
 
 ?>

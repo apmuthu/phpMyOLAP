@@ -5,6 +5,9 @@ $authentication = false;
 $auth_user = 'admin';
 $auth_pass = 'password';
 
+//default language file
+$lang = "en.php";
+
 $db_host = "localhost";
 $db_user = "root";
 $db_password = "";
