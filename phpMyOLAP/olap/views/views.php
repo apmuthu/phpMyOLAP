@@ -1,7 +1,7 @@
 <?php
 
-function printBar($cubename_sel,$levels,$img_back,$img_save,$img_home,$img_pdf,$img_csv,$img_share,$img_email,$img_weka)
-{
+function printBar($cubename_sel,$levels,$img_back,$img_save,$img_home,$img_pdf,$img_csv,$img_share,$img_email,$img_weka) {
+	global $message;
 $level_ser=implode("-",$levels);
 
 print "<table border=0>";
@@ -67,7 +67,7 @@ print "<table align=center>";
       print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divSD').style.visibility='visible';\">$message[slice]</a>";
     print "</td>";
     print "<td valign=top>";
-      print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divDrillAcross').style.visibility='visible';\">$message[drill]</a>";
+      print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divDrillAcross').style.visibility='visible';\">$message[drill_across]</a>";
     print "</td>";
     print "<td valign=top>";
       print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divPivoting').style.visibility='visible';\">Pivoting</a>";

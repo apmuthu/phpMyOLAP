@@ -87,17 +87,20 @@ list($dim1,$hier1,$lev1,$prop1)=explode(".",$level_pivoting);
                               
                               ///***************where
                               
-                                  $n=strlen($slice_p);
-                                  $slice_p=substr($slice_p,0,$n-2);
-                                  $cond=explode("--",$slice_p);
-                                  $nc=count($cond);
-    
-                                  $where="";
-                                  for($i=0;$i<$nc;$i++)
-                                  {
-                                  list($dim_c,$hier_c,$lev_c,$prop_c,$cond1)=explode(".",$cond[$i]);
-                                    if($dim_c==$dim1 && $hier_c==$hier1 && $lev_c==$lev1)
-                                    {
+                                $n=strlen($slice_p);
+                                $slice_p=substr($slice_p,0,$n-2);
+                                $cond=explode("--",$slice_p);
+                                $nc=count($cond);
+
+                                $where="";
+                                for($i=0;$i<$nc;$i++) {
+									$dim_c = strtok($cond[$i], '.');
+									$hier_c = strtok('.');
+									$lev_c = strtok('.');
+									$prop_c = strtok('.');
+									$cond1 = substr($cond[$i], strlen($dim_c)+strlen($hier_c)+strlen($lev_c)+strlen($prop_c)+4);
+									// list($dim_c,$hier_c,$lev_c,$prop_c,$cond1)=explode(".",$cond[$i]);
+                                    if($dim_c==$dim1 && $hier_c==$hier1 && $lev_c==$lev1) {
                                       $cond1=trasforma($cond1);
                                       $where="$level_table.$level_col $cond1";
                                     }

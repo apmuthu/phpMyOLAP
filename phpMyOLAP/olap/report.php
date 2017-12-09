@@ -38,7 +38,7 @@ print "</div>";
 print "</center>";
 
 
-//*********************************************maschere
+//*********************************************masks
 include("slice/slice_mask.php");
 include("drill/drill_mask.php");
 include("hier/hier_mask.php");

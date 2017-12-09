@@ -9,7 +9,7 @@ print "<form action='drill-across/exec_across.php' name='drill_across' method=po
 print "<table border=0 cellspacing=2 cellpadding=12>";
 print "<tr>";
 print "<td colspan=2>";
-  print "<b>Drill-across</b>";
+  print "<b>$message[drill_across]</b>";
 print "</td>";
 print "</tr>";
 
@@ -36,10 +36,10 @@ print "</tr>";
 
 print "<tr>";
 print "<td>";
-  print "<a style='width:120px' class='button' href='#' onclick='invia(\"drill_across\")';\">OK</a>";
+  print "<a style='width:120px' class='button' href='#' onclick='invia(\"drill_across\")';\">$message[ok]</a>";
 print "</td>";
 print "<td>";
-  print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divDrillAcross').style.visibility='hidden';\">Close</a>";
+  print "<a style='width:120px' class='button' href='#' onclick=\"document.getElementById('divDrillAcross').style.visibility='hidden';\">$message[close]</a>";
 print "</td>";
 
 print "</tr>";

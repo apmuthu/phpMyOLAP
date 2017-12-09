@@ -11,11 +11,10 @@ fclose($filehandle);
 }
 
 
-function SQLgenerator2($cubename_sel,$levels_ser,$slice,$colonna,$ordinamento)
-{
-global $xmlfile;
-$xml=simplexml_load_file($xmlfile);
-$levels=explode("-",$levels_ser);
+function SQLgenerator2($cubename_sel,$levels_ser,$slice,$colonna,$ordinamento) {
+	global $xmlfile;
+	$xml=simplexml_load_file($xmlfile);
+	$levels=explode("-",$levels_ser);
 
 //print "XML $xmlfile, CUB $cubename_sel, LEV $levels_ser<br>";
 //*******************************CUBE
@@ -161,11 +160,14 @@ $cond=explode("--",$slice);
 $nc=count($cond);
 
 
-for($i=0;$i<$nc;$i++)
-{
-list($dim_c,$hier_c,$lev_c,$prop_c,$cond1)=explode(".",$cond[$i]);
+for($i=0;$i<$nc;$i++) {
+	$dim_c = strtok($cond[$i], '.');
+	$hier_c = strtok('.');
+	$lev_c = strtok('.');
+	$prop_c = strtok('.');
+	$cond1 = substr($cond[$i], strlen($dim_c)+strlen($hier_c)+strlen($lev_c)+strlen($prop_c)+4);
 
-$cond1=trasforma($cond1);
+	$cond1=trasforma($cond1);
 
 // Add fk_cube
 foreach($cube->DimensionUsage as $dimension_cube)
@@ -221,7 +223,7 @@ foreach($xml->Dimension as $dimensioncube)
                           $where[$i]="$level_table.$level_col $cond1";
 }}}}}}}}}
 
-//metti in AND
+//put in AND
 $where_final="";
 for($i=0;$i<$nc;$i++)
 {
@@ -435,28 +437,26 @@ return $v;
 }
 
 
-function trasforma($cond1)
-{
-$n=strlen($cond1);
-$prima2=substr($cond1,0,2);
-$seconda=substr($cond1,2,$n);
+function trasforma($cond1) {
+	$prima2=substr($cond1,0,2);
+	$seconda=addslashes(substr($cond1,2));
 
-if(($prima2==">=" or $prima2=="<=") and is_numeric($seconda)==false)
-return $cond1="$prima2'$seconda'";
+	if($prima2==">=" || $prima2=="<=") {
+		if (!is_numeric($seconda))
+			return $cond1="$prima2'$seconda'";
+		else
+			return $cond1;
+	} 	
 
-if(($prima2==">=" or $prima2=="<=") and is_numeric($seconda)==true)
-return $cond1="$prima2$seconda";
+	$prima1=substr($cond1,0,1);
+	$seconda=addslashes(substr($cond1,1));
 
-
-$prima1=substr($cond1,0,1);
-$seconda=substr($cond1,1,$n);
-
-if(($prima1=="=" or $prima1=="<" or $prima1==">") and is_numeric($seconda)==false)
-return $cond1="$prima1'$seconda'";
-
-if(($prima1=="=" or $prima1=="<" or $prima1==">") and is_numeric($seconda)==true)
-return $cond1="$prima1$seconda";
-
+	if($prima1=="=" || $prima1=="<" || $prima1==">") {
+		if (!is_numeric($seconda))
+			return $cond1="$prima1'$seconda'";
+		else
+			return $cond1;
+	} 	
 
 }
 

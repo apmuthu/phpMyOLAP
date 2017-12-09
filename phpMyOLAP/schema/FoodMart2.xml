@@ -18,11 +18,11 @@
       <Table name="warehouse"/>
       
       <Level name="City" column="warehouse_city" uniqueMembers="false">
-      <Property name="Warehouse City" column="warehouse_city"/>
+        <Property name="Warehouse City" column="warehouse_city"/>
       </Level>
       
       <Level name="Warehouse Name" column="warehouse_name" uniqueMembers="true">
-      <Property name="Warehouse Name" column="warehouse_name"/>
+        <Property name="Warehouse Name" column="warehouse_name"/>
       </Level>
       
     </Hierarchy>
@@ -31,17 +31,19 @@
 <Dimension name="Store">
     <Hierarchy hasAll="true" name="Store" primaryKey="store_id" primaryKeyTable="store">
       <Table name="store"/>
+
       <Level name="Store Country" table="store" column="store_country" uniqueMembers="true">
         <Property name="Store Country" column="store_country"/>
       </Level>
-      
+
       <Level name="Store State" column="store_state" uniqueMembers="true">
         <Property name="Store State" column="store_state"/>
       </Level>
+
       <Level name="Store City" column="store_city" uniqueMembers="false">
         <Property name="Store City" column="store_city"/>
       </Level>
-      
+
       <Level name="Store Name" column="store_name" uniqueMembers="true">
         <Property name="Store Name" column="store_name"/>
         <Property name="Store Type" column="store_type"/>
@@ -80,31 +82,31 @@
       <Level name="Year" column="the_year" type="Numeric" uniqueMembers="true" levelType="TimeYears">
       <Property name="year" column="the_year"/>
       </Level>
-      
+
       <Level name="Quarter" column="quarter" uniqueMembers="false" levelType="TimeQuarters">
       <Property name="quarter" column="quarter"/>
       </Level>
-      
+
       <Level name="Month" column="month_of_year" uniqueMembers="false" type="Numeric" levelType="TimeMonths">
       <Property name="month" column="month_of_year"/>
       </Level>
-      
-      
+
+
     </Hierarchy>
     <Hierarchy hasAll="true" name="Weekly" primaryKey="time_id" primaryKeyTable="time_by_day">
       <Table name="time_by_day"/>
-      
+
       <!--unnecessary because redundant-->
       <!--<Level name="Year" column="the_year" type="Numeric" uniqueMembers="true" levelType="TimeYears"><Property name="year" column="the_year"/></Level>-->
-            
+
       <Level name="Week" column="week_of_year" type="Numeric" uniqueMembers="false" levelType="TimeWeeks">
       <Property name="week" column="week_of_year"/>
       </Level>
-      
+
       <Level name="Day" column="day_of_month" uniqueMembers="false" type="Numeric" levelType="TimeDays">
       <Property name="day" column="day_of_month"/>
       </Level>
-      
+
     </Hierarchy>
 </Dimension>
 

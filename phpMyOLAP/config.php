@@ -5,15 +5,24 @@ $authentication = false;
 $auth_user = 'admin';
 $auth_pass = 'password';
 
+$demo = false;
+
 //default language file
 $lang = "en.php";
+
+$urlsito="http://localhost/phpMyOLAP";
 
 $db_host = "localhost";
 $db_user = "root";
 $db_password = "";
-$db_name = "FoodMart";
-$urlsito="http://localhost/phpMyOLAP";
-$xmlfile="$urlsito/schema/FoodMart2.xml";
+if ($demo) {
+	$db_name = "FoodMart";
+	$xmlfile="$urlsito/schema/FoodMart2.xml";
+} else {
+	$db_name = "phpmyolap";
+	$xmlfile="$urlsito/schema/FoodMart2.xml";
+}
+
 $stylefile="$urlsito/style/style.css";
 $jsfile="$urlsito/script/script.js";
 

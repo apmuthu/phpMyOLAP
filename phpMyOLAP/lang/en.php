@@ -26,6 +26,7 @@ $message["ok"]="OK";
 $message["close"]="Close";
 $message["save"]="Save";
 
+$message["drill_across"]="Drill-across";
 $message["drill"]="Roll-up / Drill-down";
 $message["change_hier"]="Change hierarchy";
 $message["change_dim"]="Change dimension";
