@@ -22,3 +22,7 @@ Work done here
 * English Translation
 * Rudimentary PHP Session based Authentication - Default hardcoded Access: admin / password
 * Export File names now prefixed with <b>olap_</b> and suffixed with timestamp
+
+Derivatives and Extensions
+==========================
+* [OLAPEngine](https://github.com/SIMITGROUP/olapengine) - Refer Issue #1
